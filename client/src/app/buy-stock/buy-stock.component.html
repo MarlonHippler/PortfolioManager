@@ -1,0 +1,42 @@
+<div>
+    <h2>Wertpapier kaufen</h2>
+    <form [formGroup]="buyStockForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label id="stockName">Name</label>
+            <input type="text" formControlName="stockName" class="form-control"
+                   [ngClass]="{ 'is-invalid': submitted && f.stockName.errors }"/>
+            <div *ngIf="submitted && f.stockName.errors" class="invalid-feedback">
+                <div *ngIf="f.stockName.errors.required"> Name einer Aktie muss angegeben werden.</div>
+            </div>
+            <label id="quantity">Anzahl</label>
+            <input type="number" formControlName="quantity" class="form-control"
+                   [ngClass]="{ 'is-invalid': submitted && f.quantity.errors }"/>
+            <div *ngIf="submitted && f.quantity.errors" class="invalid-feedback">
+                <div *ngIf="f.quantity.errors.required"> Die Anzahl Aktie muss angegeben werden.</div>
+            </div>
+
+            <label id="wkn">WKN</label>
+            <input type="text" formControlName="wkn" class="form-control"
+                   [ngClass]="{ 'is-invalid': submitted && f.wkn.errors }"/>
+            <div *ngIf="submitted && f.wkn.errors" class="invalid-feedback">
+                <div *ngIf="f.wkn.errors.required"> Die WKN der Aktie muss angegeben werden.</div>
+            </div>
+            <label id="type">Art des Wertpapiers</label>
+            <input type="text" formControlName="type" class="form-control"
+                   [ngClass]="{ 'is-invalid': submitted && f.type.errors }"/>
+            <div *ngIf="submitted && f.type.errors" class="invalid-feedback">
+                <div *ngIf="f.type.errors.required"> Die Art des Wertpapiers muss angegeben werden.</div>
+            </div>
+            <br>
+            <div class="form-group">
+                <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Login
+                </button>
+
+        </div>
+        </div>
+
+
+    </form>
+</div>
