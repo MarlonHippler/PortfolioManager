@@ -1,4 +1,4 @@
 export class Portfolio {
-    portfolioId: number;
+    id: number;
     portfolioName: string;
 }

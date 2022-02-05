@@ -18,12 +18,13 @@ import {StartseitenDialogComponent} from "./startseiten-dialog/startseiten-dialo
 import {LogOffDialogComponent} from "./log-off-dialog/log-off-dialog.component";
 
 import {BuyStockComponent} from "./buy-stock/buy-stock.component";
-import {SellStockDialogComponent} from "./sell-stock-dialog/sell-stock-dialog.component";
-import {MoveStockDialogComponent} from "./move-stock-dialog/move-stock-dialog.component";
+import{SellStockComponent} from "./sell-stock-dialog/sell-stock.component";
+import {MoveStockComponent} from "./move-stock/move-stock.component";
 
 import {RegisterComponent} from './register/register.component';
 import {HomeComponent} from './home/home.component';
 import {AlertComponent} from './alert/alert.component';
+import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details.component';
 
 
 @NgModule({
@@ -43,6 +44,9 @@ import {AlertComponent} from './alert/alert.component';
         RegisterComponent,
         HomeComponent,
         AlertComponent,
+        SellStockComponent,
+        MoveStockComponent,
+        PortfolioDetailsComponent,
 
 
     ],

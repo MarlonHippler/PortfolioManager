@@ -1,3 +1,6 @@
 export * from './alert.service';
 export * from './authentication.service';
 export * from './user.service';
+export * from './portfolio.service.spec';
+export * from './portfolio.service';
+
