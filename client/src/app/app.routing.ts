@@ -4,6 +4,7 @@ import {LoginComponent} from "./login/login.component";
 import {ManagementComponent} from './management/management/management.component';
 import {RegisterComponent} from './register/register.component';
 import {NavComponent} from "./nav/nav.component";
+import {HomeComponent} from "./home";
 
 
 const appRoutes: Routes = [
@@ -11,6 +12,7 @@ const appRoutes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'app-nav', component: NavComponent },
+    { path: 'portfolios', component: HomeComponent},
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];
