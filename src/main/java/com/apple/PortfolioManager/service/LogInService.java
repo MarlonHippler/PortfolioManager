@@ -17,11 +17,13 @@ public class LogInService {
     private final UserRepo userRepo;
 
 
-    public void login(LogInRequest request) {
-        if ( !true == userRepo.findByUsername(request.getUsername()).get().getUsername().equals(request.username)
+    public String login(LogInRequest request) {
+
+        if ( !userRepo.findByUsername(request.getUsername()).get().getUsername().equals(request.username)
                 && userRepo.findByUsername(request.getUsername()).get().getPassword().equals(request.password)){
             throw new IllegalStateException("Die Angaben stimmen nicht überein");
         }
+        return "it wooarks";
 
 
 
