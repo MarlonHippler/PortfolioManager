@@ -30,13 +30,13 @@ public class UserService implements UserDetailsService {
     }
 
     public String registerUser(UserApp user){
-        boolean userExists = userRepo
+       /* boolean userExists = userRepo
                 .findByUsername(user.getUsername())
                 .isPresent();
 
         if (userExists){
             throw new IllegalStateException(("email taken"));
-        }
+        } */
 
         String encdodedPassword = bCryptPasswordEncoder.encode(user.getPassword());
 
