@@ -5,7 +5,10 @@ import {first} from 'rxjs/operators';
 import {AlertService, AuthenticationService, UserService} from '../services';
 
 
-@Component({templateUrl: 'register.component.html'})
+@Component(
+
+    {templateUrl: 'register.component.html',
+        selector: 'register',})
 export class RegisterComponent implements OnInit {
     registerForm: FormGroup;
     loading = false;
