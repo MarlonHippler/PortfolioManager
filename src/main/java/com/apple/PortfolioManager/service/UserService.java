@@ -1,24 +1,52 @@
 package com.apple.PortfolioManager.service;
-
-
-import com.apple.PortfolioManager.model.User;
+import com.apple.PortfolioManager.model.UserApp;
 import com.apple.PortfolioManager.repo.UserRepo;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.AllArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.UUID;
-
 @Service
-public class UserService {
+@AllArgsConstructor
+public class UserService implements UserDetailsService {
+
+    private final static String USER_NOT_FOUND_MSG =
+            "user with email %s not found";
+
     private final UserRepo userRepo;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    @Autowired
-    public UserService(UserRepo userRepo) {
-        this.userRepo = userRepo;
+
+
+    @Override
+    public UserDetails loadUserByUsername(String email)
+            throws UsernameNotFoundException {
+        return userRepo.findByEmail(email)
+                .orElseThrow(() ->
+                        new UsernameNotFoundException(
+                                String.format(USER_NOT_FOUND_MSG, email)));
     }
 
-    public User addEmployee(User user) {
-        user.setId(UUID.randomUUID().toString());
-        return userRepo.save(user);
+    public String registerUser(UserApp user){
+        boolean userExists = userRepo
+                .findByEmail(user.getEmail())
+                .isPresent();
+
+        if (userExists){
+            throw new IllegalStateException(("email taken"));
+        }
+
+        String encdodedPassword = bCryptPasswordEncoder.encode(user.getPassword());
+
+        user.setPassword(encdodedPassword);
+
+        userRepo.save(user);
+
+
+        return "it works";
     }
+
 }
+
