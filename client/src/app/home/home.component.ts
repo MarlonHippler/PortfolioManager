@@ -1,3 +1,5 @@
+/*
+
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import {Router} from '@angular/router';
 import {Observable, Subscription} from 'rxjs';
@@ -78,3 +80,4 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.router.navigate(['update', id]);
     }
 }
+*/
