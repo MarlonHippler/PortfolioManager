@@ -6,13 +6,13 @@ import {AlertService} from '../services/alert.service';
 import {AuthenticationService} from '../services/authentication.service';
 
 @Component({
-    selector: 'buy-stock',
-    templateUrl: './buy-stock.component.html',
-    styleUrls: ['./buy-stock.component.css']
+    selector: 'sell-stock',
+    templateUrl: './sell-stock.component.html',
+    styleUrls: ['./sell-stock.component.css']
 })
-export class BuyStockComponent implements OnInit {
+export class SellStockComponent implements OnInit {
 
-    buyStockForm: FormGroup;
+    sellStockForm: FormGroup;
     loading = false;
     submitted = false;
     returnUrl: string;
@@ -26,26 +26,24 @@ export class BuyStockComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.buyStockForm = this.formBuilder.group({
-            name: ['', Validators.required],
+        this.sellStockForm = this.formBuilder.group({
             quantity: ['', Validators.required],
             wkn: ['', Validators.required],
-            type: ['', Validators.required],
+
 
         });
         // get return url from route parameters or default to '/'
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     }
     // convenience getter for easy access to form fields
-    get f() { return this.buyStockForm.controls; }
+    get f() { return this.sellStockForm.controls; }
 
     onSubmit() {
 
         this.submitted = true;
 
-
         // stop here if form is invalid
-        if (this.buyStockForm.invalid) {
+        if (this.sellStockForm.invalid) {
             return;
         }
 

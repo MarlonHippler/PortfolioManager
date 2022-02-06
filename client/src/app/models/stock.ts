@@ -1,7 +1,7 @@
 export class Stock {
     id: number;
     name: string;
-    wkn: number;
+    wkn: string;
     type: string;
     quantity: number;
 }

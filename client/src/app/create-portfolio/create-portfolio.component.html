@@ -1,21 +1,18 @@
-<div>
-    <h2>Neues Portfolio anlegen</h2>
-    <form>
-        <table>
-            <tr>
-                <td>Geben sie Ihrem neuen Portfolio einen Namen:</td>
+<h3>Add Portfolio</h3>
+<div [hidden]="submitted" style="width: 400px;">
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
 
-            </tr>
-            <tr></tr>
-            <tr></tr>
-            <tr>       <td><input type="text" name="portfolioName"></td> </tr>
+            <label id="name">Portfolioname</label>
+            <input type="text" class="form-control" id="portfolioName" required [(ngModel)]="portfolio.portfolioName" name="portfolioName">
 
-            <tr> <button>Anlegen</button></tr>
-
-
-        </table>
-
-
+        </div>
+        <button type="submit" class="btn btn-success">Add</button>
     </form>
+</div>
+
+<div [hidden]="!submitted">
+    <h4>Du hast ein neues Portfolio hinzugefügt.</h4>
+    <!-- <button class="btn btn-success" (click)="newPortfolio()">Add</button>-->
 </div>
 

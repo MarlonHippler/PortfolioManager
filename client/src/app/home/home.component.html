@@ -2,14 +2,41 @@
 <p>You're logged in with Angular 8!!</p>
 <h3>All registered users:</h3>
 <ul>
-    <li *ngFor="let user of users">
+    <tr *ngFor="let user of users">
         {{user.username}} ({{user.firstName}} {{user.lastName}})
         - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
-    </li>
+    </tr>
 </ul>
 
-<a routerLink="add" class="btn btn-sm btn-success mb-2">Add Portfolio</a>
-<table class="table table-striped">
+<a routerLink="create-portfolio" class="btn btn-sm btn-success mb-2">Add Portfolio</a>
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h2>Porfolio List</h2>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Porfolionummer</th>
+                <th>Portfolioname</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let portfolio of portfolios | async">
+                <td>{{portfolio.id}}</td>
+                <td>{{portfolio.portfolioName}}</td>
+                <td>
+                    <button (click)="portfolioDetails(portfolio.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!--<table class="table table-striped">
     <thead>
     <tr>
         <th style="width: 45%">Portfolionummer</th>
@@ -18,15 +45,13 @@
     </tr>
     </thead>
     <tbody>
-
- <!--<tr *ngFor="let portfolio of portfolios">
-        <td>{{portfolio.portfolioId}} </td>
+    <tr *ngFor="let portfolio of portfolios, let i = index;">
+        <td>{{i+1}} </td>
         <td>{{portfolio.portfolioName}}</td>
         <td style="white-space: nowrap">
-            <a routerLink="edit/{{portfolio.id}}" class="btn btn-sm btn-primary mr-1">Show</a>
+
         </td>
     </tr>
-    -->
-    </tbody>
-</table>
 
+    </tbody>
+</table>-->

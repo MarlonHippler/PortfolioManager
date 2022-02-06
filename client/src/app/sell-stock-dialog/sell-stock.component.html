@@ -1,0 +1,31 @@
+<div>
+    <h2>Wertpapier verkaufen</h2>
+    <form [formGroup]="sellStockForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label id="wkn">WKN</label>
+            <input type="text" formControlName="wkn" class="form-control"
+                   [ngClass]="{ 'is-invalid': submitted && f.wkn.errors }"/>
+            <div *ngIf="submitted && f.wkn.errors" class="invalid-feedback">
+                <div *ngIf="f.wkn.errors.required"> Die WKN der Aktie muss angegeben werden.</div>
+            </div>
+            <br>
+        </div>
+        <label id="quantity">Anzahl</label>
+        <input type="number" formControlName="quantity" class="form-control"
+               [ngClass]="{ 'is-invalid': submitted && f.quantity.errors }"/>
+        <div *ngIf="submitted && f.quantity.errors" class="invalid-feedback">
+            <div *ngIf="f.quantity.errors.required"> Die Anzahl Aktie muss angegeben werden.</div>
+        </div>
+
+        <div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                Aktie Verkaufen
+            </button>
+
+        </div>
+
+</form>
+</div>
+
+
