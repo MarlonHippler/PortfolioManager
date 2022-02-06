@@ -13,9 +13,6 @@ import {JwtInterceptor} from './helpers/jwt.interceptor';
 import {LoginComponent} from './login/login.component';
 
 
-import {StartseitenDialogComponent} from "./startseiten-dialog/startseiten-dialog.component";
-
-import {LogOffDialogComponent} from "./log-off-dialog/log-off-dialog.component";
 
 import {BuyStockComponent} from "./buy-stock/buy-stock.component";
 import{SellStockComponent} from "./sell-stock-dialog/sell-stock.component";
@@ -35,9 +32,7 @@ import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details
 
         LoginComponent,
 
-        StartseitenDialogComponent,
 
-        LogOffDialogComponent,
         CreatePortfolioComponent,
         BuyStockComponent,
 

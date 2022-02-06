@@ -21,17 +21,17 @@ public class UserService implements UserDetailsService {
 
 
     @Override
-    public UserDetails loadUserByUsername(String email)
+    public UserDetails loadUserByUsername(String username)
             throws UsernameNotFoundException {
-        return userRepo.findByEmail(email)
+        return userRepo.findByEmail(username)
                 .orElseThrow(() ->
                         new UsernameNotFoundException(
-                                String.format(USER_NOT_FOUND_MSG, email)));
+                                String.format(USER_NOT_FOUND_MSG, username)));
     }
 
     public String registerUser(UserApp user){
         boolean userExists = userRepo
-                .findByEmail(user.getEmail())
+                .findByEmail(user.getUsername())
                 .isPresent();
 
         if (userExists){

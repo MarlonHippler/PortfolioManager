@@ -27,21 +27,24 @@ public class UserApp implements Serializable, UserDetails {
             allocationSize = 1)
 
     private Long id;
-    private String name;
-    private String email;
+    private String firstName;
+    private String lastName;
+    private String username;
     private String password;
     @Enumerated(EnumType.STRING)
     private AppUserRole appUserRole;
     private Boolean locked = false;
     private Boolean enabled = true;
 
-    public UserApp(String name,
-                   String email,
+    public UserApp(String firstName,
+                   String lastName,
+                   String username,
                    String password,
                    AppUserRole appUserRole
                 ) {
-        this.name = name;
-        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
         this.password = password;
         this.appUserRole = appUserRole;
         this.locked = locked;
@@ -56,8 +59,9 @@ public class UserApp implements Serializable, UserDetails {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + username + '\'' +
                 '}';
     }
 
@@ -75,7 +79,7 @@ public class UserApp implements Serializable, UserDetails {
 
     @Override
     public String getUsername() {
-        return email;
+        return username;
     }
 
     @Override
@@ -106,20 +110,26 @@ public class UserApp implements Serializable, UserDetails {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getEmail() {
-        return email;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public void setPassword(String password) {

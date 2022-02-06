@@ -12,22 +12,22 @@ export class PortfolioService {
     constructor(private http: HttpClient) { }
 
     getPortfolio(id: number): Observable<any> {
-        return this.http.get(${this.baseUrl}/${id});
+        return this.http.get(`${this.baseUrl}/${id}`);
     }
 
     createPortfolio(portfolio: Object): Observable<Object> {
-        return this.http.post(${this.baseUrl}, portfolio);
+        return this.http.post(`${this.baseUrl}`, portfolio);
     }
 
     updatePortfolio(id: number, value: any): Observable<Object> {
-        return this.http.put(${this.baseUrl}/${id}, value);
+        return this.http.put(`${this.baseUrl}/${id}`, value);
     }
 
     deletePortfolio(id: number): Observable<any> {
-        return this.http.delete(${this.baseUrl}/${id}, { responseType: 'text' });
+        return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
     }
 
     getPortfolioList(): Observable<any> {
-        return this.http.get(${this.baseUrl});
+        return this.http.get(`${this.baseUrl}`);
     }
 }
