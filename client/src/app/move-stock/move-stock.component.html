@@ -1,36 +1,45 @@
 <div>
     <h2>Wertpapier verschieben</h2>
-    <form>
-        <table>
-            <tr>
-                <td>Name</td>
-                <td><input type="text" name="stockName"></td>
-            </tr>
-            <tr>
-                <td>Stückzahl</td>
-                <td><input type="number" name="quantity"></td>
+    <form [formGroup]="moveStockForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label id="ursprungPortfolio">Ursprungsportfolio</label>
+            <input type="text" formControlName="stockName" class="form-control"
+                   [ngClass]="{ 'is-invalid': submitted && f.stockName.errors }"/>
+            <div *ngIf="submitted && f.stockName.errors" class="invalid-feedback">
+                <div *ngIf="f.portfolioname.errors.required"> Name des Ursprungsportfolio muss angegeben werden.</div>
+            </div>
+            <label id="zielPortfolio">Zielportfolio</label>
+            <input type="text" formControlName="stockName" class="form-control"
+                   [ngClass]="{ 'is-invalid': submitted && f.stockName.errors }"/>
+            <div *ngIf="submitted && f.stockName.errors" class="invalid-feedback">
+                <div *ngIf="f.portfolioname.errors.required"> Name des Ursprungsportfolio muss angegeben werden.</div>
+            </div>
+            <label id="quantity">Anzahl</label>
+            <input type="number" formControlName="quantity" class="form-control"
+                   [ngClass]="{ 'is-invalid': submitted && f.quantity.errors }"/>
+            <div *ngIf="submitted && f.quantity.errors" class="invalid-feedback">
+                <div *ngIf="f.quantity.errors.required"> Die Anzahl Aktie muss angegeben werden.</div>
+            </div>
+
+            <label id="wkn">WKN</label>
+            <input type="text" formControlName="wkn" class="form-control"
+                   [ngClass]="{ 'is-invalid': submitted && f.wkn.errors }"/>
+            <div *ngIf="submitted && f.wkn.errors" class="invalid-feedback">
+                <div *ngIf="f.wkn.errors.required"> Die WKN der Aktie muss angegeben werden.</div>
+            </div>
+
+            <br>
 
 
-            </tr>
-            <tr>
-                <td>WKN</td>
-                <td><input type="number" name="stockID"></td>
-            </tr>
-            <tr>
-                <td>Art des Wertpapiers</td>
-                <td><input type="text" name="typeOfStock"></td>
+            <br>
+            <div class="form-group">
+                <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                   Verschieben
+                </button>
 
-            </tr>
-            <tr>
-                <td>Name des Zielportfolios</td>
-                <td><input type="text" name="nameOfReceivingPortfolio"></td>
-
-            </tr>
-            <tr>
-                <td></td>
-                <td><button>Verschieben</button></td>
-            </tr>
-        </table>
+            </div>
+        </div>
 
 
     </form>
