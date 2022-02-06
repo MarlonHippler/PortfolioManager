@@ -59,11 +59,12 @@ export class RegisterComponent implements OnInit {
                 console.log(response)
                 /*   data => { */
                 this.alertService.success('Registration successful', true);
-                this.router.navigate(['/login']);
+                this.router.navigate(['/login']).then(r => '/login');
             },
             error => {
                 this.alertService.error(error);
                 this.loading = false;
+
             });
     }
 }
