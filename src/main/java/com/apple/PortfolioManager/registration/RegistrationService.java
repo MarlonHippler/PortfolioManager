@@ -24,6 +24,7 @@ public class RegistrationService {
                 new UserApp(
                         request.getFirstName(),
                       request.getLastName(),
+                      request.getEmail(),
 
                       request.getUsername(),
                       request.getPassword(),

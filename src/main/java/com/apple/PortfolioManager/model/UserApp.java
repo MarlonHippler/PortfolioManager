@@ -30,6 +30,7 @@ public class UserApp implements Serializable, UserDetails {
     private String firstName;
     private String lastName;
     private String username;
+    private String email;
     private String password;
     @Enumerated(EnumType.STRING)
     private AppUserRole appUserRole;
@@ -40,12 +41,14 @@ public class UserApp implements Serializable, UserDetails {
                    String lastName,
                    String username,
                    String password,
+                   String email,
                    AppUserRole appUserRole
                 ) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
         this.password = password;
+        this.email = email;
         this.appUserRole = appUserRole;
         this.locked = locked;
         this.enabled = enabled;
@@ -61,7 +64,8 @@ public class UserApp implements Serializable, UserDetails {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
-                ", email='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", username='" + username + '\'' +
                 '}';
     }
 
@@ -108,6 +112,14 @@ public class UserApp implements Serializable, UserDetails {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getFirstName() {

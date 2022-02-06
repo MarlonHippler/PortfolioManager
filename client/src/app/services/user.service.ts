@@ -8,7 +8,7 @@ export class UserService {
     constructor(private http: HttpClient) { }
 
     getAll() {
-        return this.http.get<User[]>(`${this.baseUrl}/users`);
+        return this.http.get<User[]>(`${this.baseUrl}`);
     }
 
     register(user: User) {

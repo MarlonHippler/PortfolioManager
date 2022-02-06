@@ -8,7 +8,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {CreatePortfolioComponent} from './create-portfolio/create-portfolio.component';
 import {ErrorInterceptor} from './helpers/error.interceptor';
-import {fakeBackendProvider} from './helpers/fake-backend';
+
 import {JwtInterceptor} from './helpers/jwt.interceptor';
 import {LoginComponent} from './login/login.component';
 
@@ -22,6 +22,7 @@ import {RegisterComponent} from './register/register.component';
 import {HomeComponent} from './home/home.component';
 import {AlertComponent} from './alert/alert.component';
 import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details.component';
+import { NavComponent } from './nav/nav.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details
         SellStockComponent,
         MoveStockComponent,
         PortfolioDetailsComponent,
+        NavComponent,
 
 
     ],
@@ -56,8 +58,8 @@ import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details
         {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
         {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
 
-        // provider used to create fake backend
-        fakeBackendProvider
+
+
     ],
     bootstrap: [AppComponent]
 })
