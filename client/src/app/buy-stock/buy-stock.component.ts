@@ -57,7 +57,7 @@ export class BuyStockComponent implements OnInit {
             return;
         }
         this.loading = true;
-        this.stockService.buy(this.buyStockForm.value).pipe(first())
+        this.stockService.buy(this.buyStockForm.value)
             .subscribe(
                 data => {
                     this.alertService.success('Kauf erfolgreich', true);

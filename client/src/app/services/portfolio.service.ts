@@ -24,10 +24,10 @@ export class PortfolioService {
     }
 
     deletePortfolio(id: number): Observable<any> {
-        return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
+        return this.http.delete(`${this.baseUrl}api/v1/deletePortfolio/{id_portfolio}`, { responseType: 'text' });
     }
 
-    getPortfolioList(): Observable<any> {
+    getPortfolioList(): Observable<Object> {
         return this.http.get(`${this.baseUrl}api/v1/listPortfolios`);
     }
 }

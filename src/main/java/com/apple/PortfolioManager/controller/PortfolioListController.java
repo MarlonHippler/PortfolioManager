@@ -29,14 +29,14 @@ public class PortfolioListController {
 
     @GetMapping("api/v1/listPortfolios")
     public List<Portfolio> allportfolios() {
-        return portfolioListService.getPortfolios();
+        return this.portfolioListService.getPortfolios();
 
     }
 
     @DeleteMapping("api/v1/deletePortfolio/{id_portfolio}")
     public boolean deletePortfolio(@PathVariable("id_portfolio") long idPortfolio, Portfolio portfolio) {
         portfolio.setIdPortfolio(idPortfolio);
-        return portfolioListService.deletePortfolio(portfolio);
+        return this.portfolioListService.deletePortfolio(portfolio);
     }
 
 
