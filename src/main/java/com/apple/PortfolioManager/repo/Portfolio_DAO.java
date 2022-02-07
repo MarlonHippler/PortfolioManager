@@ -12,5 +12,5 @@ public interface Portfolio_DAO {
     public List<Portfolio> getPortfolios();
     public boolean deletePortfolio(Portfolio portfolio);
     public List<Portfolio> getPortfolioByID(Portfolio portfolio);
-    public boolean updatePortfolio(Portfolio portfolio);
+
 }

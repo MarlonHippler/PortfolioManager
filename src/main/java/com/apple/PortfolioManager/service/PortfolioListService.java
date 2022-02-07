@@ -13,7 +13,7 @@ public interface PortfolioListService {
     public List<Portfolio> getPortfolios();
     public boolean deletePortfolio(Portfolio portfolio);
     public List<Portfolio> getPortfolioByID(Portfolio portfolio);
-    public boolean updatePortfolio(Portfolio portfolio);
+
 }
 
 

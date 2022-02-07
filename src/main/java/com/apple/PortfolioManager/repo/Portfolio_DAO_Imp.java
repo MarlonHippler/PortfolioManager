@@ -53,14 +53,14 @@ public class Portfolio_DAO_Imp  implements Portfolio_DAO {
     @Override
     public List<Portfolio> getPortfolioByID(Portfolio portfolio) {
         Session currentSession = sessionFactory.getCurrentSession();
-        Query<Portfolio> query=currentSession.createQuery("from Portfolio where id_portfolio=:id_portfolio", Portfolio.class);
+        Query<Portfolio> query=currentSession.createQuery("from Portfolio where idPortfolio=:id_portfolio", Portfolio.class);
         query.setParameter("id_portfolio", portfolio.getIdPortfolio());
         List<Portfolio> list=query.getResultList();
         return list;
     }
 
 
-    }
+}
 
 
 
