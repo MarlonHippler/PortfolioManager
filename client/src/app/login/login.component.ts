@@ -7,9 +7,9 @@ import {AlertService} from '../services/alert.service';
 import {AuthenticationService} from '../services/authentication.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
 
@@ -18,16 +18,16 @@ export class LoginComponent implements OnInit {
     submitted = false;
     returnUrl: string;
 
-  constructor(private formBuilder: FormBuilder,
-              private route: ActivatedRoute,
-              private router: Router,
-              public authenticationService: AuthenticationService,
-              private alertService: AlertService) {
-      // redirect to home if already logged in
-      if (this.authenticationService.currentUserValue) {
-          this.router.navigate(['/']);
-      }
-  }
+    constructor(private formBuilder: FormBuilder,
+                private route: ActivatedRoute,
+                private router: Router,
+                public authenticationService: AuthenticationService,
+                private alertService: AlertService) {
+        // redirect to home if already logged in
+        if (this.authenticationService.currentUserValue) {
+            this.router.navigate(['/']);
+        }
+    }
 
     ngOnInit() {
         this.loginForm = this.formBuilder.group({

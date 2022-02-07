@@ -6,7 +6,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -16,7 +16,6 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.web.bind.annotation.CrossOrigin;
 
 @Configuration
 @AllArgsConstructor
@@ -33,26 +32,38 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private AuthenticationEntryPoint authenticationEntryPoint;
 
-    @CrossOrigin
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        http.cors().and().csrf().disable().
+                authorizeRequests()
+                .antMatchers( "/api/v1/login", "/api/v1/auth/register").permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .exceptionHandling().authenticationEntryPoint(authenticationEntryPoint).and()
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http
-                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().exceptionHandling()
-                .authenticationEntryPoint(authenticationEntryPoint).and()
-                .authorizeRequests((request) -> request.antMatchers("/h2-console/**", "/api/v1/auth/login", "/api/v1/auth/register").permitAll()
-                        .antMatchers(HttpMethod.OPTIONS, "/**").permitAll().anyRequest().authenticated())
-                .addFilterBefore(new JWTAuthenticationFilter(userService, jWTTokenHelper),
-                        UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(authenticationTokenFilterBean(), UsernamePasswordAuthenticationFilter.class);
+    }
 
 
+    @Bean
+    public JWTAuthenticationFilter authenticationTokenFilterBean() throws Exception {
+        return new JWTAuthenticationFilter(userService, jWTTokenHelper);
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(daoAuthenticationProvider());
     }
+
     @Bean
-    public DaoAuthenticationProvider  daoAuthenticationProvider(){
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
+    }
+
+    @Bean
+    public DaoAuthenticationProvider daoAuthenticationProvider() {
         DaoAuthenticationProvider provider =
                 new DaoAuthenticationProvider();
         provider.setPasswordEncoder(bCryptPasswordEncoder);
@@ -61,6 +72,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 }
+
 
 
 

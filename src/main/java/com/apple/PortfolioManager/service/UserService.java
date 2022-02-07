@@ -41,9 +41,9 @@ public class UserService implements UserDetailsService {
             throw new IllegalStateException(("email taken"));
         } */
 
-        //String encdodedPassword = bCryptPasswordEncoder.encode(user.getPassword());
+        String encdodedPassword = bCryptPasswordEncoder.encode(user.getPassword());
 
-        //user.setPassword(encdodedPassword);
+        user.setPassword(encdodedPassword);
 
         userRepo.save(user);
         portfolioOverviewRepo.save(new PortfolioOverview());
