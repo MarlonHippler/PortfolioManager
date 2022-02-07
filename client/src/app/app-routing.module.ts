@@ -7,6 +7,11 @@ import {LoginComponent} from './login/login.component';
 import {PortfolioDetailsComponent} from './portfolio-details/portfolio-details.component';
 import {RegisterComponent} from './register/register.component';
 
+/**
+ * App Routing Module
+ *
+ * @author  Marc Wortmann, Franzi Arora
+ */
 const routes: Routes = [
     {path:'login', component:LoginComponent},
     {path:'register', component:RegisterComponent},

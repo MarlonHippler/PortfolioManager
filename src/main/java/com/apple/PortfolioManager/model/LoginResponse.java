@@ -1,5 +1,10 @@
 package com.apple.PortfolioManager.model;
 
+/**
+ * Model für LoginResponse
+ *
+ * @author  Franzi Arora
+ */
 public class LoginResponse {
 
     private String token;

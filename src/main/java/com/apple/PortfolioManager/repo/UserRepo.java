@@ -9,6 +9,12 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
+
+/**
+ * Repo für User
+ *
+ * @author  Marlon Hippler
+ */
 @Repository
 @Transactional(readOnly = true)
 public interface UserRepo

@@ -10,6 +10,11 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+/**
+ * Klasse Service für User
+ *
+ * @author  Marlon Hippler
+ */
 @Service
 @AllArgsConstructor
 public class UserService implements UserDetailsService {

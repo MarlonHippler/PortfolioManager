@@ -2,6 +2,11 @@ import { Injectable } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 
+/**
+ * Service Alert
+ *
+ * @author  Marc Wortmann, Franzi Arora
+ */
 @Injectable({ providedIn: 'root' })
 export class AlertService {
     private subject = new Subject<any>();

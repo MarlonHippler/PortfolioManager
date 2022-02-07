@@ -9,6 +9,11 @@ import {AuthenticationService} from '../services/authentication.service';
 import {UserService} from "../services";
 import {first} from "rxjs/operators";
 
+/**
+ * Buy Stock Component
+ *
+ * @author  Marc Wortmann
+ */
 @Component({
     selector: 'buy-stock',
     templateUrl: './buy-stock.component.html',

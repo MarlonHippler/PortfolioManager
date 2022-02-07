@@ -5,6 +5,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Model für Overview
+ *
+ * @author  Marlon Hippler
+ */
 @Entity
 public class PortfolioOverview implements Serializable {
 

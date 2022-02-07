@@ -6,7 +6,11 @@ import java.io.Serializable;
 @Entity
 public class Stock implements Serializable {
 
-
+    /**
+     * Model für Stock
+     *
+     * @author  Marlon Hippler
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idStock;

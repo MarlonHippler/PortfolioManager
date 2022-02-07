@@ -6,7 +6,11 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-
+/**
+ * Request für das Portfolio
+ *
+ * @author  Marlon Hippler
+ */
 @Getter
 @Setter
 @EqualsAndHashCode

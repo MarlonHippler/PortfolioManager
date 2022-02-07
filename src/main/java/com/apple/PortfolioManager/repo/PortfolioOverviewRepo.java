@@ -5,9 +5,13 @@ import com.apple.PortfolioManager.model.Stock;
 import org.hibernate.metamodel.model.convert.spi.JpaAttributeConverter;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
 import java.util.Optional;
 
+/**
+ * Repo für PortfoliOverview
+ *
+ * @author  Marlon Hippler
+ */
 @Repository
 public interface PortfolioOverviewRepo extends JpaRepository<PortfolioOverview, Long> {
     Optional<PortfolioOverview> findById(Long portfolioName);

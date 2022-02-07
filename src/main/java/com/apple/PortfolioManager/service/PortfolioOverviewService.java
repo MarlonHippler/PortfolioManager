@@ -1,5 +1,10 @@
 package com.apple.PortfolioManager.service;
 
+/**
+ * Klasse Service für Overview
+ *
+ * @author  Marlon Hippler
+ */
 import com.apple.PortfolioManager.Request.PortfolioRequest;
 import com.apple.PortfolioManager.model.Portfolio;
 import com.apple.PortfolioManager.repo.PortfolioOverviewRepo;

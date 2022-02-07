@@ -1,3 +1,5 @@
+
+
 package com.apple.PortfolioManager.service;
 
 import com.apple.PortfolioManager.Request.PortfolioRequest;
@@ -10,13 +12,21 @@ import com.apple.PortfolioManager.repo.PortfolioRepo;
 import com.apple.PortfolioManager.repo.StockRepo;
 import com.apple.PortfolioManager.repo.UserRepo;
 import lombok.AllArgsConstructor;
+import org.springframework.security.config.web.servlet.oauth2.resourceserver.OAuth2ResourceServerSecurityMarker;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
+/**
+ * Klasse Service für Portfolio
+ *
+ * @author  Marlon Hippler
+ */
 @Service
 @AllArgsConstructor
 public class PortfolioService {
+
+
 
     StockRepo stockRepo;
     PortfolioRepo   portfolioRepo;

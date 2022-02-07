@@ -16,6 +16,11 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
+/**
+ * Klasse für den JWTTokenHelper
+ *
+ * @author  Franzi Arora
+ */
 @Component
 public class JWTTokenHelper {
 

@@ -1,10 +1,14 @@
-
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AlertService} from '../services/alert.service';
 import {AuthenticationService} from '../services/authentication.service';
 
+/**
+ * Move Stock Component
+ *
+ * @author  Marc Wortmann, Franzi Arora
+ */
 @Component({
     selector: 'move-stock',
     templateUrl: './move-stock.component.html',

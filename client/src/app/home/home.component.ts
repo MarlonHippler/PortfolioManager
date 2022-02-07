@@ -8,7 +8,11 @@ import {PortfolioService} from '../services/portfolio.service';
 
 
 
-
+/**
+ * Home Component Klasse für die Projektübersichtsliste
+ *
+ * @author  Marc Wortmann, Franzi Arora
+ */
 @Component({ templateUrl: 'home.component.html' })
 export class HomeComponent implements OnInit, OnDestroy {
     currentUser: User;

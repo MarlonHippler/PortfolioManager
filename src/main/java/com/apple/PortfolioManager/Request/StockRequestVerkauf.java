@@ -5,6 +5,11 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 
+/**
+ * Request für den Verkauf von "Stock"
+ *
+ * @author  Marlon Hippler
+ */
 @AllArgsConstructor
 @Getter
 @EqualsAndHashCode

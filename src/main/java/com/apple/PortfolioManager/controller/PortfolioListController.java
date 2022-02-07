@@ -16,7 +16,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-
+/**
+ * Controller für List
+ *
+ * @author  Marlon Hippler
+ */
 @RestController
 @CrossOrigin(origins="http://localhost:4200")
 

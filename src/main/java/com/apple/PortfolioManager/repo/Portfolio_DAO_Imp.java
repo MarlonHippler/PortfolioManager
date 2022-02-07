@@ -9,9 +9,11 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-
-
-
+/**
+ * Repo für Portfolio_DAO_Imp
+ *
+ * @author  Franzi Arora, Marc Wortmann
+ */
 @Repository
 public class Portfolio_DAO_Imp  implements Portfolio_DAO {
 

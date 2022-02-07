@@ -24,7 +24,11 @@ import {AlertComponent} from './alert/alert.component';
 import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details.component';
 
 
-
+/**
+ * App Module
+ *
+ * @author  Marc Wortmann, Franzi Arora
+ */
 @NgModule({
     declarations: [
         AppComponent,

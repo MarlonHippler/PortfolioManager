@@ -1,10 +1,14 @@
 package com.apple.PortfolioManager.service;
-
 import com.apple.PortfolioManager.Request.LogInRequest;
 import com.apple.PortfolioManager.repo.UserRepo;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+/**
+ * Klasse Service für Login
+ *
+ * @author  Marlon Hippler
+ */
 @Service
 @AllArgsConstructor
 public class LogInService {

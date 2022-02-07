@@ -5,7 +5,11 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AlertService, AuthenticationService, UserService} from '../services';
 import {first} from "rxjs/operators";
 
-
+/**
+ * Register Component
+ *
+ * @author  Marc Wortmann, Franzi Arora
+ */
 @Component({templateUrl: 'register.component.html'})
 export class RegisterComponent implements OnInit {
     registerForm: FormGroup;

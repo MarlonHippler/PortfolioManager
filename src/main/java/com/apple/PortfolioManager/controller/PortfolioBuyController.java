@@ -5,7 +5,11 @@ import com.apple.PortfolioManager.service.PortfolioService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
-
+/**
+ * Controller für Buy
+ *
+ * @author  Marlon Hippler
+ */
 @CrossOrigin(origins = "http://localhost:4200/")
         @RequestMapping(path= "api/v1/buyStock")
         @RestController

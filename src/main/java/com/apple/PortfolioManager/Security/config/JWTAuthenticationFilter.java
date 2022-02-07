@@ -14,6 +14,11 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+/**
+ * Klasse für den Authentifizierungsfilter
+ *
+ * @author  Franzi Arora
+ */
 public class JWTAuthenticationFilter extends OncePerRequestFilter {
 
     private UserDetailsService userDetailsService;

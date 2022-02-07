@@ -3,6 +3,11 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {Portfolio} from '../models';
 import {PortfolioService} from '../services/portfolio.service';
 
+/**
+ * Details Component
+ *
+ * @author  Marc Wortmann, Franzi Arora
+ */
 @Component({
     selector: 'app-portfolio-details',
     templateUrl: './portfolio-details.component.html',

@@ -4,7 +4,11 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import {User} from '../models/user';
 
-
+/**
+ * Service Auth
+ *
+ * @author  Marc Wortmann, Franzi Arora
+ */
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
     private currentUserSubject: BehaviorSubject<User>;

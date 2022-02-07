@@ -3,7 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 
-
+/**
+ * Service Portfolio
+ *
+ * @author  Marc Wortmann, Franzi Arora
+ */
 @Injectable({ providedIn: 'root' })
 export class PortfolioService {
 
@@ -27,7 +31,7 @@ export class PortfolioService {
         return this.http.delete(`${this.baseUrl}api/v1/deletePortfolio/{id_portfolio}`, { responseType: 'text' });
     }
 
-    getPortfolioList(): Observable<Object> {
+    getPortfolioList(): Observable<any> {
         return this.http.get(`${this.baseUrl}api/v1/listPortfolios`);
     }
 }

@@ -6,6 +6,11 @@ import java.util.List;
 
 import com.apple.PortfolioManager.model.Portfolio;
 
+/**
+ * Repo für Portfolio_DAO
+ *
+ * @author  Franzi Arora, Marc Wortmann
+ */
 public interface Portfolio_DAO {
 
     public boolean savePortfolio(Portfolio portfolio);

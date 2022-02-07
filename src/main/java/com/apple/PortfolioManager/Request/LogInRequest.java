@@ -5,6 +5,11 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 
+/**
+ * Request für den Login
+ *
+ * @author  Marlon Hippler
+ */
 @AllArgsConstructor
 @Getter
 @EqualsAndHashCode

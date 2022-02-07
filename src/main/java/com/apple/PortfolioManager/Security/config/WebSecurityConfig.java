@@ -17,6 +17,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+/**
+ * Klasse für die WebSecurityConfig
+ *
+ * @author  Marlon Hippler, Franzi Arora
+ */
 @Configuration
 @AllArgsConstructor
 @EnableWebSecurity

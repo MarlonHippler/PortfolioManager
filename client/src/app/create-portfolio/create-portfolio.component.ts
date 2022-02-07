@@ -4,8 +4,12 @@ import {Portfolio} from '../models';
 import {PortfolioService} from '../services/portfolio.service';
 
 
-//Authoren: Marc, Franzi
 
+/**
+ * Buy Stock Component
+ *
+ * @author  Marc Wortmann, Franzi Arora
+ */
 @Component({
     selector: 'add',
     templateUrl: './create-portfolio.component.html',

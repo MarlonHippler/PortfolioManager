@@ -6,6 +6,11 @@ import {first} from 'rxjs/operators';
 import {AlertService} from '../services/alert.service';
 import {AuthenticationService} from '../services/authentication.service';
 
+/**
+ * Login Component
+ *
+ * @author  Marc Wortmann, Franzi Arora
+ */
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',

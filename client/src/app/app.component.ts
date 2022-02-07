@@ -3,6 +3,11 @@ import { Router } from '@angular/router';
 import {AuthenticationService} from './services/authentication.service';
 import {User} from './models/user';
 
+/**
+ * App Component
+ *
+ * @author  Marc Wortmann, Franzi Arora
+ */
 @Component({ selector: 'app', templateUrl: 'app.component.html' })
 export class AppComponent {
     currentUser: User;
