@@ -6,10 +6,7 @@ import {AlertService, AuthenticationService, UserService} from '../services';
 import {first} from "rxjs/operators";
 
 
-@Component(
-
-    {templateUrl: 'register.component.html',
-        selector: 'register',})
+@Component({templateUrl: 'register.component.html'})
 export class RegisterComponent implements OnInit {
     registerForm: FormGroup;
     loading = false;
@@ -32,7 +29,7 @@ export class RegisterComponent implements OnInit {
         this.registerForm = this.formBuilder.group({
             firstName: ['', Validators.required],
             lastName: ['', Validators.required],
-            eMail: ['', Validators.required],
+            email: ['', Validators.required],
             username: ['', Validators.required],
             password: ['', [Validators.required, Validators.minLength(6)]]
         });

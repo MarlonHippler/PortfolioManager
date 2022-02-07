@@ -22,7 +22,7 @@ import {RegisterComponent} from './register/register.component';
 import {HomeComponent} from './home/home.component';
 import {AlertComponent} from './alert/alert.component';
 import { PortfolioDetailsComponent } from './portfolio-details/portfolio-details.component';
-import { NavComponent } from './nav/nav.component';
+
 
 
 @NgModule({
@@ -42,8 +42,7 @@ import { NavComponent } from './nav/nav.component';
         AlertComponent,
         SellStockComponent,
         MoveStockComponent,
-        PortfolioDetailsComponent,
-        NavComponent,
+        PortfolioDetailsComponent
 
 
     ],

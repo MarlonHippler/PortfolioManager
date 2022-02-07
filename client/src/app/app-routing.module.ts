@@ -13,7 +13,7 @@ const routes: Routes = [
     {path:'add', component: CreatePortfolioComponent},
     {path: 'details/:id', component: PortfolioDetailsComponent },
     {path:'portfolios', component: HomeComponent},
-    { path: '', component: HomeComponent, canActivate: [AuthGuard] }];
+    { path: '', component: HomeComponent, canActivate: [AuthGuard]}];
 
 
 @NgModule({

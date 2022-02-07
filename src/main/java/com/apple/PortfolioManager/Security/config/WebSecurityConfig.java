@@ -30,7 +30,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .anyRequest()
                 .authenticated().and()
-                .formLogin();
+                .formLogin()
+                .defaultSuccessUrl("/api/v1/createPortfolio", true);
     }
 
     @Override
@@ -47,4 +48,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 }
+
+
 
