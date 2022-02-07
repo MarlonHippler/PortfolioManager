@@ -1,3 +1,4 @@
+// Authoren: Franzi,Marc
 
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
@@ -22,7 +23,7 @@ export class BuyStockComponent implements OnInit {
 
     private stockService: StockService;
 
-
+//
     constructor(private formBuilder: FormBuilder,
                 private route: ActivatedRoute,
                 private router: Router,
@@ -30,7 +31,7 @@ export class BuyStockComponent implements OnInit {
                 private alertService: AlertService) {
 
     }
-
+// Validierung der Felder für BuyStock
     ngOnInit() {
         this.buyStockForm = this.formBuilder.group({
             name: ['', Validators.required],
@@ -45,6 +46,7 @@ export class BuyStockComponent implements OnInit {
     // hilft
     get f() { return this.buyStockForm.controls; }
 
+    //wenn Form abgegeben, kaufe Stock
     onSubmit() {
 
         this.submitted = true;

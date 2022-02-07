@@ -3,6 +3,9 @@ import {Router} from '@angular/router';
 import {Portfolio} from '../models';
 import {PortfolioService} from '../services/portfolio.service';
 
+
+//Authoren: Marc, Franzi
+
 @Component({
     selector: 'add',
     templateUrl: './create-portfolio.component.html',
@@ -19,11 +22,7 @@ export class CreatePortfolioComponent implements OnInit {
     ngOnInit() {
     }
 
-    newPortfolio(): void {
-        this.submitted = false;
-        this.portfolio = new Portfolio();
-    }
-
+// Neues Portfolio anlegen
     save() {
         this.portfolioService
             .createPortfolio(this.portfolio).subscribe(data => {

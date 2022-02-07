@@ -3,10 +3,12 @@ package com.apple.PortfolioManager.service;
 import com.apple.PortfolioManager.Request.PortfolioRequest;
 import com.apple.PortfolioManager.model.Portfolio;
 import com.apple.PortfolioManager.repo.PortfolioOverviewRepo;
+import com.apple.PortfolioManager.repo.PortfolioRepo;
 import com.apple.PortfolioManager.repo.UserRepo;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -15,11 +17,13 @@ public class PortfolioOverviewService {
 
     PortfolioOverviewRepo portfolioOverviewRepo;
     UserRepo userRepo;
+    PortfolioRepo portfolioRepo;
 
 
     public void newPortfolio(PortfolioRequest request) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String nameUser = auth.getPrincipal().toString();
+        String nameUser = ((UserDetails)auth.getPrincipal()).getUsername();
+        ;;
         Long id = userRepo.findByUsername(nameUser).get().getId();
 
 
@@ -28,6 +32,7 @@ public class PortfolioOverviewService {
         } else {
             Portfolio portfolio = new Portfolio();
             portfolio.setNamePortfolio(request.getPortfolioName());
+            portfolioRepo.save(portfolio);
             portfolioOverviewRepo.findById(id).get().getArrayOfPortfolios().add(portfolio);
         }
     }

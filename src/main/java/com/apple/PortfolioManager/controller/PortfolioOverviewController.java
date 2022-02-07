@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = "http://localhost:4200")
         @RestController
 @RequestMapping(path="api/v1/createPortfolio")
         @AllArgsConstructor

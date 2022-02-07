@@ -1,20 +1,15 @@
-<h1>Portfolioverwaltung von {{currentUser.firstName}}!</h1>
-<p>You're logged in with Angular 8!!</p>
-<h3>All registered users:</h3>
-<ul>
-    <tr *ngFor="let user of users">
-        {{user.username}} ({{user.firstName}} {{user.lastName}})
-        - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
-    </tr>
-</ul>
+<h1>Portfolioverwaltung</h1>
 
-<li class="nav-item"><a routerlink="add" routerlinkactive="active" class="nav-link" ng-reflect-router-link="add"
-                        ng-reflect-router-link-active="active" href="/add">Portfolio anlegen</a></li>
+
+
+
+<a routerlink="add" routerlinkactive="active" class="nav-link" ng-reflect-router-link="add"
+                        ng-reflect-router-link-active="active" href="/add">Portfolio anlegen</a>
 
 
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <h2>Porfolio List</h2>
+        <h2>Deine Porfolios</h2>
     </div>
     <div class="panel-body">
         <table class="table table-striped">
