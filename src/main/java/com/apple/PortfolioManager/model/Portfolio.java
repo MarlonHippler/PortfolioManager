@@ -7,6 +7,7 @@ import java.util.List;
 
 
 @Entity
+@Table(name=portfolio)
 public class Portfolio implements Serializable {
 
     @Id

@@ -24,6 +24,7 @@ public class PortfolioService {
     UserRepo    userRepo;
 
 
+
     public int findPositionByPortfolioe(StockRequest request, Long id){
         for(int i = 0; i< portfolioOverviewRepo.findById(id).get().getArrayOfPortfolios().size(); i++){
             if(portfolioOverviewRepo.findById(id).get().getArrayOfPortfolios().get(i).getNamePortfolio().equals(request.getPortfolioName())){
