@@ -12,6 +12,7 @@ public class PortfolioOverview implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idOverview;
 
+
     @OneToMany
     public List<Portfolio> arrayOfPortfolios;
 

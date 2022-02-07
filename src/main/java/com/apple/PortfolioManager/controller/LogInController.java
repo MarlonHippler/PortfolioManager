@@ -35,7 +35,7 @@ public class LogInController {
     private AuthenticationManager authenticationManager;
 
     @PostMapping
-    @ResponseStatus(HttpStatus.OK)
+
     public ResponseEntity<LoginResponse> logIn(@RequestBody LogInRequest request) throws InvalidKeySpecException, NoSuchAlgorithmException {
         try {
             final Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(

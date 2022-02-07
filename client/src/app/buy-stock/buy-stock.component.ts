@@ -3,7 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AlertService} from '../services/alert.service';
+import {StockService} from "../services/stock.service";
 import {AuthenticationService} from '../services/authentication.service';
+import {UserService} from "../services";
+import {first} from "rxjs/operators";
 
 @Component({
     selector: 'buy-stock',
@@ -17,10 +20,13 @@ export class BuyStockComponent implements OnInit {
     submitted = false;
     returnUrl: string;
 
+    private stockService: StockService;
+
+
     constructor(private formBuilder: FormBuilder,
                 private route: ActivatedRoute,
                 private router: Router,
-                private authenticationService: AuthenticationService,
+
                 private alertService: AlertService) {
 
     }
@@ -33,10 +39,10 @@ export class BuyStockComponent implements OnInit {
             type: ['', Validators.required],
 
         });
-        // get return url from route parameters or default to '/'
+
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
     }
-    // convenience getter for easy access to form fields
+    // hilft
     get f() { return this.buyStockForm.controls; }
 
     onSubmit() {
@@ -44,10 +50,21 @@ export class BuyStockComponent implements OnInit {
         this.submitted = true;
 
 
-        // stop here if form is invalid
+        // wenn fehler
         if (this.buyStockForm.invalid) {
             return;
         }
+        this.loading = true;
+        this.stockService.buy(this.buyStockForm.value).pipe(first())
+            .subscribe(
+                data => {
+                    this.alertService.success('Kauf erfolgreich', true);
+                    this.router.navigate(['/home']);
+                },
+                error => {
+                    this.alertService.error(error);
+                    this.loading = false;
+                });
 
 
     }
