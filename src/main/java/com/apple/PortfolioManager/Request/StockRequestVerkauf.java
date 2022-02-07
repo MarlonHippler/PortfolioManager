@@ -13,5 +13,6 @@ public class StockRequestVerkauf {
 
     public String WKNStock;
     public int stueckzahlStock;
+    public String portfolioName;
 
 }

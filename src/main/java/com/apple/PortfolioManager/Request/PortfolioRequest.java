@@ -1,6 +1,7 @@
 package com.apple.PortfolioManager.Request;
 import com.apple.PortfolioManager.model.Stock;
 import lombok.*;
+
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
@@ -10,7 +11,9 @@ import java.util.List;
 @Setter
 @EqualsAndHashCode
 @ToString
+
 public class PortfolioRequest {
+
 
     public String portfolioName;
 
