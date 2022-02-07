@@ -66,9 +66,13 @@ public class Portfolio implements Serializable {
         }}
 
 
+    public Long getIdPortfolio() {
+        return idPortfolio;
+    }
 
-
-
+    public void setIdPortfolio(Long idPortfolio) {
+        this.idPortfolio = idPortfolio;
+    }
 
     public String getNamePortfolio() {
         return namePortfolio;
