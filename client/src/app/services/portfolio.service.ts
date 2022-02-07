@@ -28,6 +28,6 @@ export class PortfolioService {
     }
 
     getPortfolioList(): Observable<any> {
-        return this.http.get(`${this.baseUrl}`);
+        return this.http.get(`${this.baseUrl}api/v1/createPortfolio`);
     }
 }
