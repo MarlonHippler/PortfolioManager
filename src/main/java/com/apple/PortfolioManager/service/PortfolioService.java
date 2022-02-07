@@ -56,7 +56,12 @@ public class PortfolioService {
             throw new IllegalStateException("Portfolio not found.");
         }else{
             if (positionStockNachWKN<0){
-                throw new IllegalStateException("WKN not found");
+                Stock stock = new Stock();
+                stock.setNameStock(request.getNameStock());
+                stock.setWKNStock(request.getWKNStock());
+                stock.setArtWertpapierStock(request.getArtWertpapierStock());
+                stock.setStueckzahlStock(request.getStueckzahlStock());
+                stockRepo.save(stock);
             }else{
                 int alteStueckzahl = portfolioOverviewRepo.findById(id).get()
                         .getArrayOfPortfolios()
