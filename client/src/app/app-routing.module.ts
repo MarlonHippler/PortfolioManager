@@ -8,9 +8,12 @@ import {PortfolioDetailsComponent} from './portfolio-details/portfolio-details.c
 import {RegisterComponent} from './register/register.component';
 
 const routes: Routes = [
-    {path:'login', component:LoginComponent}, {path:'register', component:RegisterComponent},
-    {path:'add', component: CreatePortfolioComponent}, {path: 'details/:id', component: PortfolioDetailsComponent },
-    {path:'portfolios', component: HomeComponent}];
+    {path:'login', component:LoginComponent},
+    {path:'register', component:RegisterComponent},
+    {path:'add', component: CreatePortfolioComponent},
+    {path: 'details/:id', component: PortfolioDetailsComponent },
+    {path:'portfolios', component: HomeComponent},
+    { path: '', component: HomeComponent, canActivate: [AuthGuard] }];
 
 
 @NgModule({

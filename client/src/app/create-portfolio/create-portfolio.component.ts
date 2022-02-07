@@ -4,7 +4,7 @@ import {Portfolio} from '../models';
 import {PortfolioService} from '../services/portfolio.service';
 
 @Component({
-    selector: 'app-create-portfolio-dialog',
+    selector: 'add',
     templateUrl: './create-portfolio.component.html',
     styleUrls: ['./create-portfolio.component.css']
 })
