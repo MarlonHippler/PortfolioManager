@@ -22,7 +22,7 @@ public class LogInController {
     @ResponseStatus(HttpStatus.OK)
     public String logIn(@RequestBody LogInRequest request){
 
-        logInService.login(request);
+        return logInService.login(request);
     }
 
 
