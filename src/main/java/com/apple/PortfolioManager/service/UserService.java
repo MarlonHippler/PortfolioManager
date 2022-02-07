@@ -1,5 +1,7 @@
 package com.apple.PortfolioManager.service;
+import com.apple.PortfolioManager.model.PortfolioOverview;
 import com.apple.PortfolioManager.model.UserApp;
+import com.apple.PortfolioManager.repo.PortfolioOverviewRepo;
 import com.apple.PortfolioManager.repo.UserRepo;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,6 +18,7 @@ public class UserService implements UserDetailsService {
             "user with email %s not found";
 
     private final UserRepo userRepo;
+    private final PortfolioOverviewRepo portfolioOverviewRepo;
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
 
@@ -43,6 +46,8 @@ public class UserService implements UserDetailsService {
         //user.setPassword(encdodedPassword);
 
         userRepo.save(user);
+        portfolioOverviewRepo.save(new PortfolioOverview());
+
 
 
         return "it works";

@@ -31,37 +31,40 @@ public class Stock implements Serializable {
 
     //Getter and Setter
 
-    public String getNamePortfolio() {
-        return nameStock;
-    }
-
-    public void setNamePortfolio(String namePortfolio) {
-        this.nameStock = namePortfolio;
-    }
-
-    public String getWKNPortfolio() {
+    public String getWKNStock() {
         return WKNStock;
     }
 
-    public void setWKNPortfolio(String WKNPortfolio) {
-        this.WKNStock = WKNPortfolio;
+    public void setWKNStock(String WKNStock) {
+        this.WKNStock = WKNStock;
     }
 
-    public String getArtWertpapierPortfolio() {
+    public String getNameStock() {
+        return nameStock;
+    }
+
+    public void setNameStock(String nameStock) {
+        this.nameStock = nameStock;
+    }
+
+    public String getArtWertpapierStock() {
         return artWertpapierStock;
     }
 
-    public void setArtWertpapierPortfolio(String artWertpapierPortfolio) {
-        this.artWertpapierStock = artWertpapierPortfolio;
+    public void setArtWertpapierStock(String artWertpapierStock) {
+        this.artWertpapierStock = artWertpapierStock;
     }
 
-    public int getStueckzahlPortfolio() {
+    public int getStueckzahlStock() {
         return stueckzahlStock;
     }
 
-    public void setStueckzahlPortfolio(int stueckzahlPortfolio) {
-        this.stueckzahlStock = stueckzahlPortfolio;
+    public void setStueckzahlStock(int stueckzahlStock) {
+        this.stueckzahlStock = stueckzahlStock;
     }
+
+
+
 
     public Long getIdStock() {
         return idStock;

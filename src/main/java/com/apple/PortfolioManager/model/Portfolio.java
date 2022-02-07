@@ -11,7 +11,7 @@ public class Portfolio implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idPortfolio;
     public  String namePortfolio;
     @OneToMany
     public List<Stock> arrayOfStocks;
@@ -29,7 +29,7 @@ public class Portfolio implements Serializable {
     //Findet die Position der Übereinstimmung der WKN in einer ArrayList
     public int findPositionByWKN(String WKN){
         for(int i = 0; i< arrayOfStocks.size(); i++){
-            if(arrayOfStocks.get(i).getWKNPortfolio().equals(WKN)){
+            if(arrayOfStocks.get(i).getWKNStock().equals(WKN)){
                 return i;
             }
         } return -1;
@@ -42,10 +42,10 @@ public class Portfolio implements Serializable {
         //int indexNumberUebersicht = getIndexFromClient
         if(findPositionByWKN(WKN) >= 0){
             int indexNumber = findPositionByWKN(WKN);
-            int stueckzahlAlt = arrayOfStocks.get(indexNumber).getStueckzahlPortfolio();
+            int stueckzahlAlt = arrayOfStocks.get(indexNumber).getStueckzahlStock();
             if(stueckzahlAlt >= 0) {
                 int neueStueckzahl = stueckzahlAlt + stueckzahl;
-                arrayOfStocks.get(indexNumber).setStueckzahlPortfolio(neueStueckzahl);
+                arrayOfStocks.get(indexNumber).setStueckzahlStock(neueStueckzahl);
             }}
         else
             arrayOfStocks.add(new Stock(name,WKN,artWertpapier,stueckzahl));}
@@ -57,10 +57,10 @@ public class Portfolio implements Serializable {
     public void sellStock(String WKN,int stueckzahl){
         if(findPositionByWKN(WKN) >= 0){
             int indexNumber = findPositionByWKN(WKN);
-            int stueckzahlAlt = arrayOfStocks.get(indexNumber).getStueckzahlPortfolio();
+            int stueckzahlAlt = arrayOfStocks.get(indexNumber).getStueckzahlStock();
             if(stueckzahlAlt >= stueckzahl) {
                 int stueckzahlNeu = stueckzahlAlt - stueckzahl;
-                arrayOfStocks.get(indexNumber).setStueckzahlPortfolio(stueckzahlNeu);
+                arrayOfStocks.get(indexNumber).setStueckzahlStock(stueckzahlNeu);
             } else {System.out.println("Das Portfolio verfügt nicht oder in zu geringem Maße über die Aktie");}
         }}
 

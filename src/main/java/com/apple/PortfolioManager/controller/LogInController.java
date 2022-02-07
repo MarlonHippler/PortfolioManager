@@ -21,8 +21,8 @@ public class LogInController {
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
     public String logIn(@RequestBody LogInRequest request){
-       return "es funktioniert!";
-        //logInService.login(request);
+
+        logInService.login(request);
     }
 
 

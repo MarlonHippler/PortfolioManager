@@ -27,6 +27,7 @@ public class UserApp implements Serializable, UserDetails {
             allocationSize = 1)
 
     private Long id;
+    private Long portfolioOverviewId;
     private String firstName;
     private String lastName;
     private String username;

@@ -10,7 +10,7 @@ public class PortfolioOverview implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idOverview;
 
     @OneToMany
     public List<Portfolio> arrayOfPortfolios;
@@ -46,7 +46,7 @@ public class PortfolioOverview implements Serializable {
         } else {
 
             for (int i = 0; i < size; i++) {
-                if (getArrayOfPortfolios().get(indexNumberPortfolio).getArrayOfStocks().get(i).getStueckzahlPortfolio() > 0) {
+                if (getArrayOfPortfolios().get(indexNumberPortfolio).getArrayOfStocks().get(i).getStueckzahlStock() > 0) {
 
                     System.out.println(name+" kann nicht gelöscht werden, es befinden sich noch Positionen im Portfolio.");
                     keinDelete = 1;
@@ -86,13 +86,13 @@ public class PortfolioOverview implements Serializable {
         int indexUrsprungPortfolio = findPositionByName(ursprungPortfolio);
         int indexZielportfolio = findPositionByName(zielPortfolio);
         int indexUrsprungStock = getArrayOfPortfolios().get(indexUrsprungPortfolio).findPositionByWKN(WKN);
-        int stueckzahlUrsprung = getArrayOfPortfolios().get(indexUrsprungPortfolio).getArrayOfStocks().get(indexUrsprungStock).getStueckzahlPortfolio();
+        int stueckzahlUrsprung = getArrayOfPortfolios().get(indexUrsprungPortfolio).getArrayOfStocks().get(indexUrsprungStock).getStueckzahlStock();
         if (stueckzahlUrsprung >= stueckzahl) {
             getArrayOfPortfolios().get(indexZielportfolio).buyStock
-                    (getArrayOfPortfolios().get(indexUrsprungPortfolio).getArrayOfStocks().get(indexUrsprungStock).getNamePortfolio(),
+                    (getArrayOfPortfolios().get(indexUrsprungPortfolio).getArrayOfStocks().get(indexUrsprungStock).getNameStock(),
                             WKN,
-                            getArrayOfPortfolios().get(indexUrsprungPortfolio).getArrayOfStocks().get(indexUrsprungStock).getArtWertpapierPortfolio(),
-                            getArrayOfPortfolios().get(indexUrsprungPortfolio).getArrayOfStocks().get(indexUrsprungStock).getStueckzahlPortfolio());
+                            getArrayOfPortfolios().get(indexUrsprungPortfolio).getArrayOfStocks().get(indexUrsprungStock).getArtWertpapierStock(),
+                            getArrayOfPortfolios().get(indexUrsprungPortfolio).getArrayOfStocks().get(indexUrsprungStock).getStueckzahlStock());
             getArrayOfPortfolios().get(indexUrsprungPortfolio).sellStock(WKN,stueckzahl);
 
 
@@ -102,11 +102,11 @@ public class PortfolioOverview implements Serializable {
     }
 
     public Long getId() {
-        return id;
+        return idOverview;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.idOverview = id;
     }
 
     public void setArrayOfPortfolios(List<Portfolio> arrayOfPortfolios) {
