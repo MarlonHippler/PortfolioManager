@@ -7,7 +7,7 @@ import {Observable} from 'rxjs';
 @Injectable({ providedIn: 'root' })
 export class PortfolioService {
 
-    private baseUrl = 'http://localhost:4200/';
+    private baseUrl = 'http://localhost:8080/';
 
     constructor(private http: HttpClient) { }
 
@@ -16,11 +16,11 @@ export class PortfolioService {
     }
 
     createPortfolio(portfolio: Object): Observable<Object> {
-        return this.http.post(`${this.baseUrl}`, portfolio);
+        return this.http.post(`${this.baseUrl}api/v1/createPortfolio`, portfolio);
     }
 
     updatePortfolio(id: number, value: any): Observable<Object> {
-        return this.http.put(`${this.baseUrl}/${id}`, value);
+        return this.http.put(`${this.baseUrl}${id}`, value);
     }
 
     deletePortfolio(id: number): Observable<any> {

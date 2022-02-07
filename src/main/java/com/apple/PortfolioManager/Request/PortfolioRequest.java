@@ -14,7 +14,8 @@ import java.util.List;
 @ToString
 public class PortfolioRequest {
 
-    public String name;
+    public String portfolioName;
+    
 
 
 }

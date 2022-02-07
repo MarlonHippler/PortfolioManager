@@ -10,6 +10,6 @@ import java.util.Optional;
 
 @Repository
 public interface PortfolioOverviewRepo extends JpaRepository<PortfolioOverview, Long> {
-    Optional<PortfolioOverview> findById(Long name);
+    Optional<PortfolioOverview> findById(Long portfolioName);
 }
 

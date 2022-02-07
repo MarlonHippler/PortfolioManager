@@ -15,7 +15,7 @@ public class PortfolioOverviewService {
 
     public void newPortfolio(PortfolioRequest request) {
 
-        String string = request.getName();
+        String string = request.getPortfolioName();
 
         portfolioRepo.save(new Portfolio(string));
 
