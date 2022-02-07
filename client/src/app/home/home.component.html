@@ -1,15 +1,11 @@
 <h1>Portfolioverwaltung</h1>
-
-
-
-
-<a routerlink="add" routerlinkactive="active" class="nav-link" ng-reflect-router-link="add"
-                        ng-reflect-router-link-active="active" href="/add">Portfolio anlegen</a>
+<li class="nav-item"><a routerlink="add" routerlinkactive="active" class="nav-link" ng-reflect-router-link="add"
+                        ng-reflect-router-link-active="active" href="/add">Portfolio anlegen</a></li>
 
 
 <div class="panel panel-primary">
     <div class="panel-heading">
-        <h2>Deine Porfolios</h2>
+        <h2>Porfolio List</h2>
     </div>
     <div class="panel-body">
         <table class="table table-striped">
@@ -31,22 +27,3 @@
         </table>
     </div>
 </div>
-<!--<table class="table table-striped">
-    <thead>
-    <tr>
-        <th style="width: 45%">Portfolionummer</th>
-        <th style="width: 45%">Portfolioname</th>
-        <th style="width: 10%"></th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let portfolio of portfolios, let i = index;">
-        <td>{{i+1}} </td>
-        <td>{{portfolio.portfolioName}}</td>
-        <td style="white-space: nowrap">
-
-        </td>
-    </tr>
-
-    </tbody>
-</table>-->
