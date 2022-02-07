@@ -24,12 +24,14 @@ public class PortfolioService {
            int anzahlNeu = anzahlAlt + request.getStueckzahlStock();
            stockRepo.findByWKNStock(request.getWKNStock()).get().setStueckzahlStock(anzahlNeu);
        }else{
-           String name=request.getNameStock();
-           String WKN = request.getWKNStock();
-           String Art = request.getArtWertpapierStock();
+           Stock stock = new Stock();
+           stock.setWKNStock(request.getWKNStock());
+           stock.setNameStock(request.getNameStock());
+           stock.setArtWertpapierStock(request.getArtWertpapierStock());
+           stock.setStueckzahlStock(request.getStueckzahlStock());
            int anzahl= request.getStueckzahlStock();
 //TODO eine iteration einführen
-           portfolioRepo.findByNamePortfolio(request.getPortfolioName()).get().getArrayOfStocks().add(0,new Stock(name,WKN,Art,anzahl));
+           portfolioRepo.findByNamePortfolio(request.getPortfolioName()).get().getArrayOfStocks().add(0,new Stock(stock.nameStock, stock.WKNStock, stock.artWertpapierStock, anzahl));
 
 
        }

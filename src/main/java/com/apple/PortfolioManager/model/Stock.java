@@ -64,8 +64,6 @@ public class Stock implements Serializable {
     }
 
 
-
-
     public Long getIdStock() {
         return idStock;
     }
